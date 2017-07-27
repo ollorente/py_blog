@@ -1,0 +1,151 @@
+.text-big {
+	font-size: 150%;
+	margin: 0px;
+}
+img{
+	border: 0px;
+}
+.caja {
+	background: #fff;
+	border: solid 1px #ddd;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	min-height: 25px;
+}
+.caja-transparente {
+	margin-bottom: 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	min-height: 25px;
+}
+.padding-10 {
+	padding: 10px;
+}
+.padding-side-10 {
+	padding: 0px 10px;
+}
+.padding-side-20 {
+	padding: 0px 20px;
+}
+.padding-height-10 {
+	padding: 10px 0px;
+}
+.padding-20 {
+	padding: 20px;
+}
+.img-cenefa {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	height: 220px;
+}
+.img-cenefa-pub{
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	height: 320px;
+}
+.img-post {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	width: 200px;
+	height:200px;
+}
+.img-avatar {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px #fff;
+	box-shadow: #000;
+}
+.avatar-60 {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 60px;
+	width: 60px;
+}
+.avatar-40 {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 40px;
+	width: 40px;
+}
+.avatar-35 {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 35px;
+	width: 35px;
+}
+.avatar-30 {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 30px;
+	width: 30px;
+}
+.avatar-15 {
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	background-color: #ddd;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height: 15px;
+	width: 15px;
+}
+.username {
+	color: #fff;
+	font-weight:bold;
+	font-size:20px;
+	margin-left: 10px;
+	text-shadow: 2px 2px 2px #000;
+	-webkit-text-shadow: 2px 2px 2px #000;
+	-moz-text-shadow: 2px 2px 2px #000;
+}
+.flow {
+	overflow: auto;
+}
