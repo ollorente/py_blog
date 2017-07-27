@@ -1,0 +1,26 @@
+{% load staticfiles %}
+{% if categoria %}
+<div>
+	<p><a href="/autor/{{ categoria.username|escape }}/1/"><img src="/static/media/autor/{{ categoria.username|escape }}.jpg" alt="{{ categoria.titulo|escape }}" class="img-rounded" style="width:100%;"></a></p>
+	<h4><a href="/autor/{{ categoria.username|escape }}/1/" class="text-primary">{{ categoria.first_name|escape }} {{ categoria.last_name|escape }}</a></h4>
+	<p class="small">Desde <span><b>{{ categoria.date_joined|date:'M j, Y' }}</b></span></p>
+	{% if autor %}
+	{% for autor in autor %}
+	<p>{% if autor.ciudad %}<span>{{ autor.ciudad|escape }}{% if autor.estado %} - {{ autor.estado|escape }}{% endif %}</span><br>{% endif %}{% if autor.pais %}<span><b>{{ autor.pais|escape }}</b></span>{% endif %}</p>
+	{% endfor %}
+	{% endif %}
+	<p><span class="label label-default"><b>{{ postcount }}</b> post</span></p>
+</div>
+{% else %}
+<div>
+	<p><a href="/autor/{{ user.username|escape }}/1/"><img src="/static/media/autor/{{ user.username|escape }}.jpg" alt="{{ user.titulo|escape }}" class="img-rounded" style="width:100%;"></a></p>
+	<h4><a href="/autor/{{ user.username|escape }}/1/" class="text-primary">{{ user.first_name|escape }} {{ user.last_name|escape }}</a></h4>
+	<p class="small">Desde <span><b>{{ user.date_joined|date:'M j, Y' }}</b></span></p>
+	{% if autor %}
+	{% for autor in autor %}
+	<p>{% if autor.ciudad %}<span>{{ autor.ciudad|escape }}{% if autor.estado %} - {{ autor.estado|escape }}{% endif %}</span>{% endif %}{% if autor.pais %}<br><span><b>{{ autor.pais|escape }}</b></span>{% endif %}</p>
+	{% endfor %}
+	{% endif %}
+	<p><span class="label label-default"><b>{{ postcount }}</b> post</span></p>
+</div>
+{% endif %}

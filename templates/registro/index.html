@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Registro :: FlatlyBlog{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-12">
+					{% if mensaje %}<div class="alert alert-danger" role="alert"> <strong>{{ mensaje }}</strong> </div>{% endif %}
+					<h2 class="text-center"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Registro</h2>
+					<hr>
+					<form actiom="." class="form-horizontal" method="POST">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="id_username" class="col-md-2 control-label">Usuario*</label>
+							<div class="col-md-10">
+								<input type="text" class="form-control" id="id_username" placeholder="Usuario*" required name="username">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputNombre" class="col-md-2 control-label">Nombre(s)*</label>
+							<div class="col-md-10">
+								<input type="text" class="form-control" id="inputNombre" placeholder="Nombre(s)*" required name="first_name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputApellido" class="col-md-2 control-label">Apellido(s)</label>
+							<div class="col-md-10">
+								<input type="text" class="form-control" id="inputApellido" placeholder="Apellido(s)" name="last_name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="id_email" class="col-md-2 control-label">Correo electrónico*</label>
+							<div class="col-md-10">
+								<input type="email" class="form-control" id="id_email" placeholder="Correo electrónico*" required name="email">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="id_password_one" class="col-md-2 control-label">Contraseña*</label>
+							<div class="col-md-10">
+								<input type="password" class="form-control" id="id_password_one" placeholder="Contraseña*" required name="password_one">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="id_password_two" class="col-md-2 control-label">Confirmar contraseña*</label>
+							<div class="col-md-10">
+								<input type="password" class="form-control" id="id_password_two" placeholder="Confirmar contraseña*" required name="password_two">
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<button type="submit" class="btn btn-default">Registrarme</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-12 padding-10"></div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<aside>
+				{% include 'base/banner.html' %}
+				{% include 'base/link.html' %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}

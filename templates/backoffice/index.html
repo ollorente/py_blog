@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Backoffice :: FlatlyBlog{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-9">
+			<table class="table table-striped">
+				<thead>
+					<tr class="active">
+						<th><input type="checkbox"></th>
+						<th>Título</th>
+						<th>Estado</th>
+						<th>Categoría</th>
+						<th>Acceso</th>
+						<th>Fecha</th>
+						<th>Vistas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="text-center" scope="row"><input type="checkbox"></th>
+						<td>
+							<h4><a href="#">Titulo del post</a></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat.</p>
+						</td>
+						<td class="text-center"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+						<td class="text-center">Categoría</td>
+						<td class="text-center">Público</td>
+						<td class="text-center">2017-07-18</td>
+						<td class="text-center">547</td>
+					</tr>
+					<tr class="danger">
+						<th class="text-center" scope="row"><input type="checkbox"></th>
+						<td>
+							<h4><a href="#">Titulo del post</a></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat.</p>
+						</td>
+						<td class="text-center"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+						<td class="text-center">Categoría</td>
+						<td class="text-center">Público</td>
+						<td class="text-center">2017-07-18</td>
+						<td class="text-center">547</td>
+					</tr>
+					<tr class="warning">
+						<th class="text-center" scope="row"><input type="checkbox"></th>
+						<td>
+							<h4><a href="#">Titulo del post</a></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat.</p>
+						</td>
+						<td class="text-center"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+						<td class="text-center">Categoría</td>
+						<td class="text-center">Público</td>
+						<td class="text-center">2017-07-18</td>
+						<td class="text-center">547</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="padding-10"></div>
+			{% include 'base/ads.html' %}
+		</div>
+		<div class="col-sm-3">
+			<aside>
+				{% include 'base/link.html' %}
+				{% include 'base/link.html' %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="caja hidden-xs">
+	<div class="padding-10 flow">
+		<div class="text-gray text-uppercase" style="margin-bottom:10px;">Siguiendo <span class="text-black big">{{ siguiendocount }}</span></div>
+			{% for siguiendo in siguiendo %}
+			<a href="/autor/{{ siguiendo.seguido }}/1/" title="{{ siguiendo.seguido.first_name }} {{ siguiendo.seguido.last_name }}"><div class="avatar-40 pull-left" style="background-image:url(/static/media/autor/{{ siguiendo.seguido }}.jpg); margin: 2px;"></div></a>
+			{% endfor %}
+	</div>
+</div>

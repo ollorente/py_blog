@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% if flow %}<div class="flow">
+	<a href="/{{ regcategoria.slug }}/1/"><div class="alert alert-dismissible alert-warning"><h4 class="text-left" data-toggle="tooltip" data-placement="bottom" title="Ver más de {{ regcategoria.titulo }}">{{ regcategoria.titulo }}</h4></div></a>
+	{% if region %}
+	{% for region in region %}
+	<div class="media">
+		<div class="media-body">
+			<h3 class="media-heading"><a href="/{{ region.categoria.slug }}/{{ region.id }}/{{ region.slug }}">{{ region.titulo }}</a></h3>
+			<p>{{ region.contenido|truncatewords:"20" }}</p>
+			<p class="small"><span><b>{{ region.fechacreado }}</b></span><br><a href="/autor/{{ region.autor }}/1/"><span>{{ region.autor.user.first_name }} {{ region.autor.user.last_name }}</span></a></p>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="padding-10"></div>
+</div>{% endif %}
+<div class="flow">
+	<a href="/{{ regcategoria.slug }}/1/"><div class="alert alert-dismissible alert-warning"><h4 class="text-left" data-toggle="tooltip" data-placement="bottom" title="Ver más de {{ regcategoria.titulo }}">{{ regcategoria.titulo }}</h4></div></a>
+	{% if region %}
+	{% for region in region %}
+	<div class="media">
+		<a class="pull-left" href="/autor/{{ region.autor }}/1/"><div class="avatar-60" style="background-image: url('/static/media/autor/{{ region.autor }}.jpg');"></div></a>
+		<div class="media-body">
+			<h4 class="media-heading"><a href="/{{ region.categoria.slug }}/{{ region.id }}/{{ region.slug }}">{{ region.titulo }}</a></h4>
+		</div>
+		<div class="media-footer">
+			<p>{{ region.contenido|truncatewords:"20" }}</p>
+			<p class="small"><span><b>{{ region.fechacreado }}</b></span><br><a href="/autor/{{ region.autor }}/1/"><span>{{ region.autor.user.first_name }} {{ region.autor.user.last_name }}</span></a></p>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="padding-10"></div>
+</div>

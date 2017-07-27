@@ -1,0 +1,13 @@
+<div class="col-sm-12" style="padding:15px;"></div>
+<div class="row">
+	<div class="col-sm-12">
+		<ul class="breadcrumb">
+			{% if us %}<li>{% if uslink %}<a href="{{ uslink }}">{% endif %}{{ us }}{% if uslink %}</a>{% endif %}</li>{% endif %}
+			{% if vs %}<li>{% if vslink %}<a href="{{ vslink }}">{% endif %}{{ vs }}{% if vslink %}</a>{% endif %}</li>{% endif %}
+			{% if ws %}<li>{% if wslink %}<a href="{{ wslink }}">{% endif %}{{ ws }}{% if wslink %}</a>{% endif %}</li>{% endif %}
+			{% if xs %}<li>{% if xslink %}<a href="{{ xslink }}">{% endif %}{{ xs }}{% if xslink %}</a>{% endif %}</li>{% endif %}
+			{% if ys %}<li>{% if yslink %}<a href="{{ yslink }}">{% endif %}{{ ys }}{% if yslink %}</a>{% endif %}</li>{% endif %}
+			{% if zs %}<li>{% if zslink %}<a href="{{ zslink }}">{% endif %}{{ zs }}{% if zslink %}</a>{% endif %}</li>{% endif %}
+		</ul>
+	</div>
+</div>

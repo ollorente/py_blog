@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% if flows %}<div class="flow">
+	<a href="/{{ alocategoria.slug|escape }}/1/"><div class="alert alert-dismissible alert-info"><h4 class="text-left" data-toggle="tooltip" data-placement="bottom" title="Ver más de {{ alocategoria.titulo|escape }}">{{ alocategoria.titulo|escape }}</h4></div></a>
+	{% if aloido %}
+	{% for aloido in aloido %}
+	<div class="media">
+		<div class="media-body">
+			<h3 class="media-heading"><a href="/{{ aloido.categoria.slug|escape }}/{{ aloido.id }}/{{ aloido.slug|escape }}">{{ aloido.titulo|escape }}</a></h3>
+			<p>{{ aloido.contenido|truncatewords:"20" }}</p>
+			<p class="small"><span><b>{{ aloido.fechacreado }}</b></span><br><a href="/autor/{{ aloido.autor }}/1/"><span>{{ aloido.autor.user.first_name|escape }} {{ aloido.autor.user.last_name|escape }}</span></a></p>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="padding-10"></div>
+</div>{% endif %}
+<div class="flow">
+	<a href="/{{ alocategoria.slug }}/1/"><div class="alert alert-dismissible alert-info"><h4 class="text-left" data-toggle="tooltip" data-placement="bottom" title="Ver más de {{ alocategoria.titulo }}">{{ alocategoria.titulo }}</h4></div></a>
+	{% if aloido %}
+	{% for aloido in aloido %}
+	<div class="media">
+		<a class="pull-left" href="/autor/{{ aloido.autor }}/1/"><div class="avatar-60" style="background-image: url('/static/media/autor/{{ aloido.autor }}.jpg');"></div></a>
+		<div class="media-body">
+			<h4 class="media-heading"><a href="/{{ aloido.categoria.slug }}/{{ aloido.id }}/{{ aloido.slug }}">{{ aloido.titulo }}</a></h4>
+		</div>
+		<div class="media-footer">
+			<p>{{ aloido.contenido|truncatewords:"20" }}</p>
+			<p class="small"><span><b>{{ aloido.fechacreado }}</b></span><br><a href="/autor/{{ aloido.autor }}/1/"><span>{{ aloido.autor.user.first_name }} {{ aloido.autor.user.last_name }}</span></a></p>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="padding-10"></div>
+</div>

@@ -1,0 +1,29 @@
+<div class="padding-10"></div>
+<div class="caja padding-10">
+	{% if user.is_authenticated %}
+	{% if mensaje %}<div class="alert alert-danger" role="alert"> <strong>{{ mensaje }}</strong> </div>{% endif %}
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-group">
+			<textarea class="form-control" rows="2" maxlength="254" placeholder="Comentar..." name="comentar" required>{{ comentar }}</textarea>
+		</div>
+		<button type="submit" class="btn btn-default">Comentar</button>
+	</form>
+	<hr>
+	{% endif %}
+	<p class="text-right"><span class="label label-success"><b>{{ comentariocount }}</b> comentarios</span></p>
+	{% if comentario %}
+	{% for comentario in comentario %}
+	<div class="media">
+		<div class="media-left">
+			<a href="/autor/{{ comentario.usuario|escape }}/1/"><div class="avatar-40" style="background-image:url(/static/media/autor/{{ comentario.usuario|escape }}.jpg);" alt="{{ comentario.usuario.first_name|escape }} {{ comentario.usuario.last_name|escape }}"></div></a>
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading"><a href="/autor/{{ comentario.usuario|escape }}/1/">{{ comentario.usuario.first_name|escape }} {{ comentario.usuario.last_name|escape }}</a></h4>
+			<p>{{ comentario.comentario }}</p>
+			<p class="small"><span><b>{{ comentario.fecha }}</b></span></p>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+</div>

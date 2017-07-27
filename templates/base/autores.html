@@ -1,0 +1,28 @@
+{% load staticfiles %}
+{% if autor %}
+<div>
+	{% for autor in autor %}
+	<div class="media">
+		<div class="media-left">
+			<a href="/autor/{{ autor.user.username|escape }}/1/"><div class="avatar-60" style="background-image:url(/static/media/autor/{{ autor.user.username|escape }}.jpg);" alt="{{ autor.user.first_name|escape }} {{ autor.user.last_name|escape }}"></div></a>
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading"><a href="/autor/{{ autor.user.username|escape }}/1/">{{ autor.user.first_name|escape }} {{ autor.user.last_name|escape }}</a></h4>
+			<p class="small">{% if autor.ciudad %}<span>{{ autor.ciudad }}</span>{% if autor.estado %} - <span>{{ autor.estado }}</span>{% endif %}{% endif %}{% if autor.ciudad and autor.pais %}<br>{% endif %}{% if autor.pais %}<span><b>{{ autor.pais }}</b></span>{% endif %}</p>
+		</div>
+	</div>
+	{% endfor %}
+	<div>
+		<ul class="pager">
+			{% if autor.has_previous %}
+			<li class="previous"><a href="/autor/1/"><span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span></a></li>
+			<li class="previous"><a href="/autor/{{ autor.previous_page_number }}/"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></a></li>
+			{% endif %}
+			{% if autor.has_next %}
+			<li class="next"><a href="/autor/{{ autor.paginator.num_pages }}/"><span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span></a></li>
+			<li class="next"><a href="/autor/{{ autor.next_page_number }}/"><span class="glyphicon glyphicon-step-forward	" aria-hidden="true"></span></a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+{% endif %}

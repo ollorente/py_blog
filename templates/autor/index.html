@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block title %} {{ categoria.first_name|escape }} {{ categoria.last_name|escape }} :: FlatlyBlog{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-12 col-md-9">
+			<div class="row">
+				<div class="col-sm-4 col-md-4">
+					{% include 'base/leadavatar.html' %}
+					{% include 'base/seguidores.html' %}
+					{% include 'base/siguiendo.html' %}
+				</div>
+				<div class="col-sm-8 col-md-8">
+					{% include 'base/leadautor.html' %}
+				</div>
+				<div class="col-sm-12 col-md-12">
+					{% include 'base/ads.html' %}
+					<div class="padding-10"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-3">
+			<aside>
+				{% include 'base/banner.html' %}
+				{% include 'base/link.html' %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}

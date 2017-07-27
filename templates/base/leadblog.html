@@ -1,0 +1,33 @@
+{% load staticfiles %}
+{% if post %}
+<div>
+	{% for post in post %}
+	<div class="media">
+		<div class="media-left">
+			<a href="/autor/{{ post.autor|escape }}/1/"><div class="avatar-60" style="background-image:url(/static/media/autor/{{ post.autor|escape }}.jpg);" alt="{{ post.autor.first_name|escape }} {{ post.autor.last_name|escape }}"></div></a>
+		</div>
+		<div class="media-body">
+			<h3 class="media-heading"><a href="/{{ post.categoria.slug|escape }}/{{ post.id }}/{{ post.slug|escape }}">{{ post.titulo|escape }}</a></h3>
+			<p>{{ post.contenido|escape|truncatewords:"35" }}</p>
+			<p class="small"><span><b>{{ post.fechacreado }}</b></span> - <a href="/{{ post.categoria.slug|escape }}/1/"><span>{{ post.categoria|escape }}</span></a></p>
+		</div>
+	</div>
+	{% endfor %}
+	<div>
+		<ul class="pager">
+			{% if post.has_previous %}
+			<li class="previous"><a href="/blog/1/"><span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span></a></li>
+			<li class="previous"><a href="/blog/{{ post.previous_page_number }}/"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></a></li>
+			{% endif %}
+			{% if post.has_next %}
+			<li class="next"><a href="/blog/{{ post.paginator.num_pages }}/"><span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span></a></li>
+			<li class="next"><a href="/blog/{{ post.next_page_number }}/"><span class="glyphicon glyphicon-step-forward	" aria-hidden="true"></span></a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+{% else %}
+<div>
+	<div class="well">No hay posts para mostrar.</div>
+</div>
+{% endif %}

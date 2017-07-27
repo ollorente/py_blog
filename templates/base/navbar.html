@@ -1,0 +1,55 @@
+<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">FlatlyBlog</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<form action="/buscar" method="get" class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input name="q" maxlength="20" class="form-control bg-primary" aria-describedby="basic-addon2" placeholder="Buscar..." type="text" value="{{ query|escape }}">
+								<button type="submit" class="btn btn-default">Buscar</button>
+							</div>
+						</form>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Categorías <span class="caret"></span></a>
+							<ul class="dropdown-menu" aria-labelledby="themes">
+								{% if categorias %}
+								{% for categorias in categorias %}
+								<li><a href="/{{ categorias.slug }}/1/">{{ categorias.titulo }}</a></li>
+								{% endfor %}
+								{% endif %}
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						{% if not user.is_authenticated %}
+						<li><a href="{% url 'vista_login' %}">Entrar</a></li>
+						<li class="active"><a href="{% url 'vista_registro' %}">Regístrate</a></li>
+						{% else %}
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Apps <span class="caret"></span></a>
+							<ul class="dropdown-menu" aria-labelledby="themes">
+								{% if backoffice %}<li><a href="{% url 'vista_backoffice' %}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> BackOffice</a></li>{% endif %}
+								<li><a href="/blog/1/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Sala de prensa</a></li>
+								<li><a href="{% url 'vista_crearpost' %}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Crear post</a></li>
+								<li class="divider"></li>
+								<li><a href="{% url 'vista_configuracion' %}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</a></li>
+								<li class="divider"></li>
+								<li><a href="{% url 'vista_logout' %}">Salir</a></li>
+							</ul>
+						</li>
+						{% if avatar %}<li><a href="/autor/{{ user }}/1/"><div class="avatar-40" style="background-image: url(/static/media/autor/{{ user }}.jpg); margin: -7px 0px; float: right; border:solid 1px #fff;" ></div></a></li>{% endif %}
+						<li><a href="/autor/{{ user }}/1/"><div class="avatar-40" style="background-image: url(/static/media/autor/{{ user }}.jpg); margin: -7px 0px; float: right; border:solid 1px #fff;" ></div></a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>

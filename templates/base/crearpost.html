@@ -1,0 +1,48 @@
+{% if user.is_authenticated %}
+<div>
+	<form method="post">
+		{% csrf_token %}
+		<div class="col-md-12">
+			<div class="form-group">
+				<label for="Titulo">Título</label>
+				<input type="text" class="form-control" id="Titulo" value="{{ titulo }}" placeholder="Título" name="titulo" required>
+			</div>
+			<div class="form-group">
+				<label for="Contenido">Contenido</label>
+				<textarea class="form-control" rows="15" id="Contenido" placeholder="Contenido..." name="contenido" required>{{ contenido }}</textarea>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				{% include 'base/categoria.html' %}
+			</div>
+			<div class="form-group">
+				<label for="Titulo">Fecha inicio</label>
+				<input type="datetime" class="form-control" value="{{ fechainicio }}" name="fechainicio" placeholder="0000-00-00 00:00:00">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				{% include 'base/acceso.html' %}
+			</div>
+			<div class="form-group">
+				<label for="Titulo">Fecha finalización</label>
+				<input type="datetime" class="form-control" value="{{ fechafinal }}" name="fechafinal" placeholder="0000-00-00 00:00:00">
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<label for="Tags">Tags</label>
+				<input type="text" class="form-control" id="Tags" value="{{ tags }}" placeholder="Tags" name="tags">
+			</div>
+			<div class="form-group">
+				<div class="checkbox">
+					<label><input type="checkbox"> Publicar</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default">Actualizar</button>
+		</div>
+	</form>
+	<div style="padding:10px;"></div>
+</div>
+{% endif %}

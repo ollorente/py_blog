@@ -1,0 +1,84 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Home :: FlatlyBlog{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/noticia.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/opinion.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/region.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/internacional.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/aloido.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/entrevista.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/economia.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/tecnologia.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/ecosbogota.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/personaje.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/humor.html' %}
+				</div>
+				<div class="col-sm-6">
+					{% include 'base/video.html' %}
+				</div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+				{% if flow %}<div class="col-sm-6">
+					{% include 'base/aloido.html' %}
+				</div>{% endif %}
+				{% if flow %}<div class="col-sm-6">
+					{% include 'base/aloido.html' %}
+				</div>{% endif %}
+				{% if flow %}<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>{% endif %}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<aside>
+				{% include 'base/banner.html' %}
+				{% include 'base/link.html' %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}

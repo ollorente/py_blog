@@ -1,0 +1,7 @@
+{% if acceso %}
+<label for="Titulo">Acceso</label>
+<select class="form-control" id="select">
+	<option selected>-- Seleccione tipo de acceso --</option>
+	{% for acceso in acceso %}<option value="{{ acceso.id }}">{{ acceso.tipo }}</option>{% endfor %}
+</select>
+{% endif %}

@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-sm-12">
+	{% if post %}
+		<div itemscope itemtype="http://schema.org/Article">
+			{% if post.autor.user.id = user.id %}
+			<div class="well well-sm text-right"><a href="/editar/{{ post.autor }}/{{ post.id }}/" class="btn btn-link btn-xs text-primary">Editar</a></div>
+			{% endif %}
+			<p><span><b>{{ post.fechacreado }}</b></span></p>
+			<h1 class="text-left" itemprop="name">{{ post.titulo }}</h1>
+			<p>Por <a href="/autor/{{ post.autor }}/1/"><span itemprop="author">{{ post.autor.user.first_name }} {{ post.autor.user.last_name }}</span></a></p>
+			<p style="padding:10px;"></p>
+			{% if images %}<p><img src="/static/media/post/ciclistas-en-pasto.jpg" class="img-responsive img-rounded" alt="Responsive image"></p><p style="padding:10px;"></p>{% endif %}
+			<p>{{ post.contenido|escape }}</p>
+			<p>{% if post.vistas %}<span class="label label-default"><b>{{ post.vistas }}</b> vistos</span>{% endif %} {% if megustacount %}<span class="label label-info"><b>{{ megustacount }}</b> Me gusta</span>{% endif %}</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" style="width: 35%"></div>
+				<div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+				<div class="progress-bar progress-bar-danger" style="width: 10%"></div>
+			</div>
+		</div>
+		{% include 'base/comentarios.html' %}
+	{% endif %}
+	{% include 'base/ads.html' %}
+	</div>
+</div>

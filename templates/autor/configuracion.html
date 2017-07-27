@@ -1,0 +1,159 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Configuración :: FlatlyBlog{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-12">
+					{% if mensaje %}<div class="alert alert-danger" role="alert"> <strong>{{ mensaje }}</strong> </div>{% endif %}
+					<h2 class="text-center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</h2>
+				</div>
+				<form actiom="." class="form-horizontal" method="POST">
+					{% csrf_token %}
+					<div class="col-sm-12">
+						<hr>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_user">Usuario</label>
+								<input type="text" class="form-control" id="id_user" placeholder="Usuario" name="user" value="{{ perfil.user }}" disabled>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_photo">Foto</label>
+								<input type="file" id="id_photo" placeholder="Foto" name="photo">
+								<p class="help-block">Sube tu foto de perfil.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_celular">Celular</label>
+								<input type="text" class="form-control" id="id_celular" placeholder="Celular" value="{{ perfil.celular }}" name="celular">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_telefono">Teléfono</label>
+								<input type="text" class="form-control" id="id_telefono" placeholder="Teléfono" value="{{ perfil.telefono }}" name="telefono">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_fax">Fax</label>
+								<input type="text" class="form-control" id="id_fax" placeholder="Fax" value="{{ perfil.fax }}" name="fax">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_ciudad">Ciudad</label>
+								<input type="text" class="form-control" id="id_ciudad" placeholder="Ciudad" value="{{ perfil.ciudad }}" name="ciudad">
+							</div>
+							<div class="form-group">
+								<label for="id_estado">Estado</label>
+								<input type="text" class="form-control" id="id_estado" placeholder="Estado" value="{{ perfil.estado }}" name="estado">
+							</div>
+							<div class="form-group">
+								<label for="id_pais">País</label>
+								<select class="form-control" id="id_pais">
+									<option selected>-- Seleccione tipo de pais --</option>
+									{% for pais in pais %}<option value="{{ pais.id }}" {% if pais.id = perfil.pais.id %}selected{% endif %} >{{ pais.nombre }}</option>{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_direccion">Dirección</label>
+								<textarea class="form-control" id="id_direccion" placeholder="Dirección" name="direccion" rows="8">{{ perfil.direccion }}</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<hr>
+						<h3>Tu datos en la nube</h3>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_web">Web</label>
+								<input type="web" class="form-control" id="id_web" placeholder="Web" value="{{ perfil.web }}" name="web">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_facebook">Facebook</label>
+								<input type="text" class="form-control" id="id_facebook" placeholder="Facebook" value="{{ perfil.facebook }}" name="facebook">
+							</div>
+							<div class="form-group">
+								<label for="id_twitter">Twitter</label>
+								<input type="text" class="form-control" id="id_twitter" placeholder="Twitter" value="{{ perfil.twitter }}" name="twitter">
+							</div>
+							<div class="form-group">
+								<label for="id_youtube">Youtube</label>
+								<input type="text" class="form-control" id="id_youtube" placeholder="Youtube" value="{{ perfil.youtube }}" name="youtube">
+							</div>
+							<div class="form-group">
+								<label for="id_linkedin">Linkedin</label>
+								<input type="text" class="form-control" id="id_linkedin" placeholder="Linkedin" value="{{ perfil.linkedin }}" name="linkedin">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="id_google">Google</label>
+								<input type="text" class="form-control" id="id_google" placeholder="Google" value="{{ perfil.google }}" name="google">
+							</div>
+							<div class="form-group">
+								<label for="id_pinterest">Pinterest</label>
+								<input type="text" class="form-control" id="id_pinterest" placeholder="Pinterest" value="{{ perfil.pinterest }}" name="pinterest">
+							</div>
+							<div class="form-group">
+								<label for="id_instagram">Instagram</label>
+								<input type="text" class="form-control" id="id_instagram" placeholder="Instagram" value="{{ perfil.instagram }}" name="instagram">
+							</div>
+							<div class="form-group">
+								<label for="id_blogger">Blogger</label>
+								<input type="text" class="form-control" id="id_blogger" placeholder="Blogger" value="{{ perfil.blogger }}" name="blogger">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="checkbox">
+							<label><input type="checkbox" {% if perfil.activo == True %}checked{% endif %}> Activar</label>
+						</div>
+						<hr>
+						<button type="submit" class="btn btn-default" name="activo">Actualizar</button>
+					</div>
+				</form>
+				<div class="col-sm-12 padding-10"></div>
+				<div class="col-sm-12">
+					{% include 'base/ads.html' %}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<aside>
+				{% include 'base/banner.html' %}
+				{% include 'base/link.html' %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}
