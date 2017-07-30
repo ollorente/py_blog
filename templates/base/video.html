@@ -6,7 +6,7 @@
 	<div class="media">
 		<div class="media-body">
 			<h3 class="media-heading"><a href="/{{ video.categoria.slug }}/{{ video.id }}/{{ video.slug }}">{{ video.titulo }}</a></h3>
-			<p>{{ video.contenido|truncatewords:"20" }}</p>
+			<p>{{ video.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ video.fechacreado }}</b></span><br><a href="/autor/{{ video.autor }}/1/"><span>{{ video.autor.user.first_name }} {{ video.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 			<h4 class="media-heading"><a href="/{{ video.categoria.slug }}/{{ video.id }}/{{ video.slug }}">{{ video.titulo }}</a></h4>
 		</div>
 		<div class="media-footer">
-			<p>{{ video.contenido|truncatewords:"20" }}</p>
+			<p>{{ video.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ video.fechacreado }}</b></span><br><a href="/autor/{{ video.autor }}/1/"><span>{{ video.autor.user.first_name }} {{ video.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
