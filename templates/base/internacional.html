@@ -6,7 +6,7 @@
 	<div class="media">
 		<div class="media-body">
 			<h3 class="media-heading"><a href="/{{ internacional.categoria.slug|escape }}/{{ internacional.id }}/{{ internacional.slug|escape }}">{{ internacional.titulo|escape }}</a></h3>
-			<p>{{ internacional.contenido|escape|truncatewords:"20" }}</p>
+			<p>{{ internacional.contenido|escape|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ internacional.fechacreado }}</b></span><br><a href="/autor/{{ internacional.autor|escape }}/1/"><span>{{ internacional.autor.user.first_name|escape }} {{ internacional.autor.user.last_name|escape }}</span></a></p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 			<h4 class="media-heading"><a href="/{{ internacional.categoria.slug }}/{{ internacional.id }}/{{ internacional.slug }}">{{ internacional.titulo }}</a></h4>
 		</div>
 		<div class="media-footer">
-			<p>{{ internacional.contenido|truncatewords:"20" }}</p>
+			<p>{{ internacional.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ internacional.fechacreado }}</b></span><br><a href="/autor/{{ internacional.autor }}/1/"><span>{{ internacional.autor.user.first_name }} {{ internacional.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
