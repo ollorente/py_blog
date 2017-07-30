@@ -6,7 +6,7 @@
 	<div class="media">
 		<div class="media-body">
 			<h3 class="media-heading"><a href="/{{ personaje.categoria.slug }}/{{ personaje.id }}/{{ personaje.slug }}">{{ personaje.titulo }}</a></h3>
-			<p>{{ personaje.contenido|truncatewords:"20" }}</p>
+			<p>{{ personaje.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ personaje.fechacreado }}</b></span><br><a href="/autor/{{ personaje.autor }}/1/"><span>{{ personaje.autor.user.first_name }} {{ personaje.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 			<h4 class="media-heading"><a href="/{{ personaje.categoria.slug }}/{{ personaje.id }}/{{ personaje.slug }}">{{ personaje.titulo }}</a></h4>
 		</div>
 		<div class="media-footer">
-			<p>{{ personaje.contenido|truncatewords:"20" }}</p>
+			<p>{{ personaje.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ personaje.fechacreado }}</b></span><br><a href="/autor/{{ personaje.autor }}/1/"><span>{{ personaje.autor.user.first_name }} {{ personaje.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
