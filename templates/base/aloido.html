@@ -6,7 +6,7 @@
 	<div class="media">
 		<div class="media-body">
 			<h3 class="media-heading"><a href="/{{ aloido.categoria.slug|escape }}/{{ aloido.id }}/{{ aloido.slug|escape }}">{{ aloido.titulo|escape }}</a></h3>
-			<p>{{ aloido.contenido|truncatewords:"20" }}</p>
+			<p>{{ aloido.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ aloido.fechacreado }}</b></span><br><a href="/autor/{{ aloido.autor }}/1/"><span>{{ aloido.autor.user.first_name|escape }} {{ aloido.autor.user.last_name|escape }}</span></a></p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 			<h4 class="media-heading"><a href="/{{ aloido.categoria.slug }}/{{ aloido.id }}/{{ aloido.slug }}">{{ aloido.titulo }}</a></h4>
 		</div>
 		<div class="media-footer">
-			<p>{{ aloido.contenido|truncatewords:"20" }}</p>
+			<p>{{ aloido.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ aloido.fechacreado }}</b></span><br><a href="/autor/{{ aloido.autor }}/1/"><span>{{ aloido.autor.user.first_name }} {{ aloido.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
