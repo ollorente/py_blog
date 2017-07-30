@@ -6,7 +6,7 @@
 	<div class="media">
 		<div class="media-body">
 			<h3 class="media-heading"><a href="/{{ region.categoria.slug }}/{{ region.id }}/{{ region.slug }}">{{ region.titulo }}</a></h3>
-			<p>{{ region.contenido|truncatewords:"20" }}</p>
+			<p>{{ region.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ region.fechacreado }}</b></span><br><a href="/autor/{{ region.autor }}/1/"><span>{{ region.autor.user.first_name }} {{ region.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 			<h4 class="media-heading"><a href="/{{ region.categoria.slug }}/{{ region.id }}/{{ region.slug }}">{{ region.titulo }}</a></h4>
 		</div>
 		<div class="media-footer">
-			<p>{{ region.contenido|truncatewords:"20" }}</p>
+			<p>{{ region.contenido|linebreaksbr|truncatewords:"20" }}</p>
 			<p class="small"><span><b>{{ region.fechacreado }}</b></span><br><a href="/autor/{{ region.autor }}/1/"><span>{{ region.autor.user.first_name }} {{ region.autor.user.last_name }}</span></a></p>
 		</div>
 	</div>
