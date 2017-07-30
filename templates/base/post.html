@@ -10,7 +10,7 @@
 			<p>Por <a href="/autor/{{ post.autor }}/1/"><span itemprop="author">{{ post.autor.user.first_name }} {{ post.autor.user.last_name }}</span></a></p>
 			<p style="padding:10px;"></p>
 			{% if images %}<p><img src="/static/media/post/ciclistas-en-pasto.jpg" class="img-responsive img-rounded" alt="Responsive image"></p><p style="padding:10px;"></p>{% endif %}
-			<p>{{ post.contenido|escape }}</p>
+			<p>{{ post.contenido|escape|linebreaksbr }}</p>
 			<p>{% if post.vistas %}<span class="label label-default"><b>{{ post.vistas }}</b> vistos</span>{% endif %} {% if megustacount %}<span class="label label-info"><b>{{ megustacount }}</b> Me gusta</span>{% endif %}</p>
 			<div class="progress">
 				<div class="progress-bar progress-bar-success" style="width: 35%"></div>
